@@ -172,6 +172,9 @@ set(config_module_list
 
 	# Hardware test
 	#examples/hwtest
+	
+	#Iridium Dynamics
+	iridium/att_read_simple
 )
 
 set(config_extra_builtin_cmds
