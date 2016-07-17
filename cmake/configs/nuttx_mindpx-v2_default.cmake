@@ -171,9 +171,6 @@ set(config_module_list
 
 	# Hardware test
 	#examples/hwtest
-	
-	# Iridium Dynamics
-	iridium/led_blink
 )
 
 set(config_extra_builtin_cmds

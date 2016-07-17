@@ -9,9 +9,9 @@
 #include <uORB/uORB.h>
 #include <uORB/topics/vehicle_attitude.h>
 
-__EXPORT int led_blink_main(int argc, char *argv[]);
+__EXPORT int att_read_simple_main(int argc, char *argv[]);
 
-int led_blink_main(int argc, char *argv[]) {
+int att_read_simple_main(int argc, char *argv[]) {
     PX4_INFO("Hello Sky!");
     
     int att = orb_subscribe(ORB_ID(vehicle_attitude));
@@ -32,7 +32,7 @@ int led_blink_main(int argc, char *argv[]) {
             if (fds[0].revents & POLLIN) {
                     struct vehicle_attitude_s raw;
                     orb_copy(ORB_ID(vehicle_attitude), att, &raw);
-                    PX4_INFO("[iridium_led_blink] Yaw:\t%8.4f", (double)raw.yaw);
+                    PX4_INFO("[iridium_att_read_simple] Yaw:\t%8.4f", (double)raw.yaw);
             }
     }
     
